@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte & Sustentável</title>
+    <style>
+        /* Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: #1b4332;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #52b788;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #52b788;
+        }
+
+        /* Seção Hero (Banner Principal) */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #52b788;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #40916c;
+        }
+
+        /* Seções de Conteúdo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #1b4332;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #52b788;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Grid de Pilares (Cards) */
+        .grid-pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 5px solid #52b788;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #1b4332;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* Seção Sobre/Equilíbrio */
+        .sobre-flex {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .sobre-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sobre-text p {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 18px;
+        }
+
+        .sobre-img {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .sobre-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Formulário de Contato */
+        .contato-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1b4332;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #52b788;
+        }
+
+        .btn-submit {
+            background-color: #1b4332;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #40916c;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1b4332;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Agro<span>Forte</span></div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#pilares">Pilares</a>
+            <a href="#equilibrio">O Equilíbrio</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>O Futuro do Agro é Sustentável</h1>
+        <p>Unindo força tecnológica, alta produtividade e respeito máximo ao meio ambiente para alimentar o amanhã.</p>
+        <a href="#pilares" class="btn">Conheça nossa Visão</a>
+    </section>
+
+    <section id="pilares" class="container">
+        <h2 class="section-title">Nossos Pilares para o Futuro</h2>
+        <div class="grid-pilares">
+            <div class="card">
+                <h3>Tecnologia Verde</h3>
+                <p>Uso de inteligência artificial, drones e sensores para otimizar o uso de água, insumos e energia, reduzindo o desperdício a quase zero.</p>
+            </div>
+            <div class="card">
+                <h3>Preservação Ativa</h3>
+                <p>Práticas de manejo que recuperam o solo, protegem nascentes e mantêm a biodiversidade local integrada às áreas produtivas.</p>
+            </div>
+            <div class="card">
+                <h3>Carbono Neutro</h3>
+                <p>Incentivo a técnicas como o plantio direto e a integração lavoura-pecuária-floresta (ILPF) para capturar mais carbono do que emitir.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="equilibrio" style="background-color: #e9f5ed;">
+        <div class="container sobre-flex">
+            <div class="sobre-text">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Produção & Conservação</h2>
+                <p>O grande desafio do nosso século não é escolher entre produzir alimentos ou proteger a natureza, mas sim entender que **um depende do outro**.</p>
+                <p>Um solo vivo e rico em nutrientes, insetos polinizadores protegidos e um clima equilibrado são os maiores aliados do produtor rural. A agricultura forte do futuro caminha lado a lado com a ciência ambiental.</p>
+            </div>
+            <div class="sobre-img">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=600&q=80" alt="Plantação jovem com tecnologia de irrigação moderna">
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="container">
+        <h2 class="section-title">Junte-se ao Movimento</h2>
+        <div class="contato-form">
+            <form action="#" method="POST" onsubmit="alert('Mensagem enviada com sucesso! (Simulação)'); return false;">
+                <div class="form-group">
+                    <label for="nome">Nome / Empresa</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Como você quer construir esse futuro?</label>
+                    <textarea id="mensagem" rows="4" placeholder="Sua mensagem ou proposta de parceria..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </</section>
+
+    <footer>
+        <p>&copy; 2026 AgroForte Sustentável. Cultivando a produtividade, protegendo o planeta.</p>
+    </footer>
+
+</body>
+</html>
